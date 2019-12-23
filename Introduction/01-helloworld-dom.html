@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <input id="prenom" type="text" value="World">
+  </div>
+  <p>
+    Hello <span id="output">World</span> !
+  </p>
+  <script>
+    const inputPrenom = document.getElementById('prenom');
+    const output = document.getElementsByTagName('span')[0];
+    inputPrenom.addEventListener('keyup', () => {
+      const prenomSaisi = inputPrenom.value;
+      output.textContent = prenomSaisi;
+    });
+    // ^
+    // |
+    // |                                                                        textContent
+    // |getElementById - getElementsByTagName - addEventListener ..↻..          =>
+    // +------------------------------------------------------------------------4306------>
+    // Clavier                                                                  (keyup:f)
+
+  </script>
+</body>
+</html>

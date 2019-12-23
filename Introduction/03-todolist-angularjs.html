@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body ng-app="todolist">
+  <div ng-controller="TodoCtrl as $ctrl">
+    <div>
+      <input ng-model="$ctrl.todo" type="text">
+      <button ng-click="$ctrl.addTodo()">+</button>
+    </div>
+    <div>
+      <p ng-repeat="todo in $ctrl.todos track by $index">
+        {{ todo }}
+      </p>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script>
+    class TodoCtrl {
+      constructor($http) {
+        this.todos = [];
+        $http.get('https://jsonplaceholder.typicode.com/todos')
+          .then((res) => {
+            this.todos = res.data.map((t) => t.title).splice(0, 10);
+          });
+      }
+      addTodo() {
+        this.todos.push(this.todo);
+      }
+    }
+    angular.module('todolist', [])
+      .controller('TodoCtrl', TodoCtrl);
+  </script>
+</body>
+</html>
