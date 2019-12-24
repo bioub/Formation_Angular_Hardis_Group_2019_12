@@ -10,12 +10,13 @@
 
 <body>
   <div>
-    <input id="prenom" type="text" value="World">
+    <input id="prenom" type="text" value="World" class="test">
   </div>
   <p>
     Hello <span id="output">World</span> !
   </p>
   <script>
+    /** @type {HTMLInputElement} */
     const inputPrenom = document.getElementById('prenom');
     const output = document.getElementsByTagName('span')[0];
     inputPrenom.addEventListener('keyup', () => {

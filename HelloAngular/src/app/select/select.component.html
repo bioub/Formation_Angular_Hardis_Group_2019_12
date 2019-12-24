@@ -1,0 +1,8 @@
+<div class="selected">
+    {{ selected }}
+</div>
+<div class="items">
+    <div class="item" *ngFor="let item of items" (click)="selectedChange.emit(item)">
+        {{ item }}
+    </div>
+</div>

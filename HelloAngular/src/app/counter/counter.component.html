@@ -1,0 +1,8 @@
+<button (click)="increment()">{{ count }}</button>
+
+<!--
+<ng-template [ngIf]="count % 2 === 0">
+    <button (click)="increment(10)">{{ count }}</button>
+</ng-template>
+-->
+<button (click)="increment(10)" *ngIf="count % 2 === 0">{{ count }}</button>

@@ -1,0 +1,16 @@
+<h2>Hello</h2>
+<app-hello></app-hello>
+
+<h2>Counter</h2>
+<app-counter></app-counter>
+
+<h2>Select</h2>
+<app-select
+  [selected]="selectedName"
+  [items]="names"
+  (selectedChange)="selectedName = $event"
+>
+</app-select>
+
+
+<p>Vous avez sélectionné : {{selectedName}}</p>
