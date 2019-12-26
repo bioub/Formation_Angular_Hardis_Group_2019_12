@@ -1,13 +1,27 @@
 <!--
     Manipuler les attributs HTML (limité aux types string)
     Prénom : <input value="{{ name }}">
-    <input type="checkbox" checked="false">
+    <input type="checkbox" [checked]="completed">
+    Attention à ne pas écrire :
+    <input type="checkbox" checked="{{ completed }}">
+    completed sera converti en type string :
+    String(false) -> 'false'
+    String(true) -> 'true'
+    Boolean('') -> false
+    Boolean('false') -> true
+    Boolean('true') -> true
+-->
+<!-- 
+inputElt.addEventListener('input', ($event) => {
+    name = $event.target.value
+})
 -->
 <!-- Manipuler les propriétés du DOM (pas de limites de types) -->
 Prénom : <input [value]="name" (input)="name = $event.target.value"> <!-- inputElt.value = name -->
 <input type="checkbox" [checked]="completed" > <!-- inputElt.checked = completed -->
 <p>hello {{ name }} !</p>
 <p [innerText]="name"></p>
+<p>{{ name }}</p>
 <!--
     const pElt = document.createElement('p');
     pElt.innerText = 'test';

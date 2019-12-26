@@ -1,4 +1,11 @@
+<!--
+    btnElt.addEventListener('click', () => {
+        increment(count);
+    });
+-->
 <button (click)="increment()">{{ count }}</button>
+
+<button (click)="increment()" [ngClass]="{pair: count % 2 === 0, impair: count % 2 === 1}">{{ count }}</button>
 
 <!--
 <ng-template [ngIf]="count % 2 === 0">
