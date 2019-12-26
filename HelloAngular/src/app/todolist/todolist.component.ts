@@ -25,7 +25,7 @@ export class TodolistComponent implements OnInit {
   todos
   */
 
-  addTodo(event) {
+  addTodo(event: Event) {
     event.preventDefault();
   }
 

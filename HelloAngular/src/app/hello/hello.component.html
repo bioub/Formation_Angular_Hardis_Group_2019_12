@@ -21,7 +21,7 @@ Prénom : <input [value]="name" (input)="name = $event.target.value"> <!-- input
 <input type="checkbox" [checked]="completed" > <!-- inputElt.checked = completed -->
 <p>hello {{ name }} !</p>
 <p [innerText]="name"></p>
-<p>{{ name }}</p>
+<p class="active">{{ name }}</p>
 <!--
     const pElt = document.createElement('p');
     pElt.innerText = 'test';

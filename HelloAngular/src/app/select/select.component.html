@@ -1,8 +1,8 @@
-<div class="selected">
+<div class="selected" (click)="opened = !opened">
     {{ selected }}
 </div>
-<div class="items">
-    <div class="item" *ngFor="let item of items" (click)="selectedChange.emit(item)">
+<div class="items" *ngIf="opened">
+    <div class="item" *ngFor="let item of items" [ngClass]="{active: item === selected}" (click)="selectedChange.emit(item)">
         {{ item }}
     </div>
 </div>

@@ -7,6 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SelectComponent implements OnInit {
 
+  opened = false;
+
   @Input() selected = '';
   @Input() items = [];
 
