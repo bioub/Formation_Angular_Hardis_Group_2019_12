@@ -4,5 +4,6 @@
   <router-outlet></router-outlet>
 
   <hr />
-  <app-clock></app-clock>
+  <app-clock *ngIf="showClock"></app-clock>
+  <button (click)="showClock = !showClock">Switch</button>
 </div>

@@ -1,8 +1,10 @@
-<h3>Name</h3>
-<p>{{ user.name }}</p>
+<ng-container *ngIf="user$ | async as user">
+  <h3>Name</h3>
+  <p>{{ user.name }}</p>
 
-<h3>Email</h3>
-<p>{{ user.email }}</p>
+  <h3>Email</h3>
+  <p>{{ user.email }}</p>
 
-<h3>Phone</h3>
-<p>{{ user.phone }}</p>
+  <h3>Phone</h3>
+  <p>{{ user.phone }}</p>
+</ng-container>

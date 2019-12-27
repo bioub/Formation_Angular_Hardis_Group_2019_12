@@ -8,7 +8,6 @@ import { ContactUsComponent } from './core/contact-us/contact-us.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
 import { SharedModule } from './shared/shared.module';
-import { UsersModule } from './users/users.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BrowserModule,
     SharedModule,
-    UsersModule,
     AppRoutingModule, // en dernier car route **
   ],
   providers: [],

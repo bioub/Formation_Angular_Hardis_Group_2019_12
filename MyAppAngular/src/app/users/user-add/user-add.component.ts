@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-add',
@@ -15,13 +15,13 @@ export class UserAddComponent implements OnInit {
     phone: '',
   };
 
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
 
   addUser() {
-    this.httpClient.post('https://jsonplaceholder.typicode.com/users', this.user)
+    this.userService.create(this.user)
       .subscribe((newUser) => {
         this.router.navigate(['users']);
       });

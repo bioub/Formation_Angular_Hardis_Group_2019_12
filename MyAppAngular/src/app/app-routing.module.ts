@@ -9,7 +9,12 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 const routes: Routes = [{
   path: '', // url : /
   component: HomeComponent
-}, {
+},
+{
+  path: 'users',
+  loadChildren: () => import('./users/users.module').then((exports) => exports.UsersModule),
+},
+{
   path: 'contactez-nous', // url /contactez-nous
   component: ContactUsComponent,
 }, {

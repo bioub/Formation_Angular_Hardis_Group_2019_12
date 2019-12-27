@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-clock',
@@ -7,14 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClockComponent implements OnInit {
 
-  now = new Date();
+  now$: Observable<Date>;
 
   constructor() { }
 
   ngOnInit() {
-    setInterval(() => {
-      this.now = new Date();
-    }, 1000);
+    this.now$ = interval(1000).pipe(map(() => new Date()));
   }
+
+  // now = new Date();
+  // private intervalId;
+
+  // constructor() { }
+
+  // ngOnInit() {
+  //   this.intervalId = setInterval(() => {
+  //     this.now = new Date();
+  //   }, 1000);
+  // }
+
+  // ngOnDestroy() {
+  //   clearInterval(this.intervalId);
+  // }
 
 }
