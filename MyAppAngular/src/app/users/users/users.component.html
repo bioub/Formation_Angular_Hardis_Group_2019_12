@@ -1,0 +1,15 @@
+<div class="conteneur">
+  <div class="gauche">
+    <div *ngFor="let user of users">
+      <a [routerLink]="user.id" routerLinkActive="current">
+        {{ user.name }}
+      </a>
+    </div>
+    <div>
+      <a routerLink="add" routerLinkActive="current">Ajouter un user</a>
+    </div>
+  </div>
+  <div class="droite">
+    <router-outlet></router-outlet>
+  </div>
+</div>

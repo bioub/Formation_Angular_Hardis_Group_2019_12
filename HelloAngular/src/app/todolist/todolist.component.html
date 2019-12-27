@@ -1,8 +1,8 @@
-<form class="todo-form">
-    <input type="text" class="todo-input">
+<form class="todo-form" (submit)="addTodo($event)">
+    <input type="text" class="todo-input" (input)="todo = $event.target.value">
     <button>+</button>
 </form>
 <div class="todo-list">
-    <p class="item">Acheter du pain</p>
-    <p class="item">Passer à la pharmacie</p>
+    <p class="item" *ngFor="let todo of todos">{{todo}}</p>
+
 </div>

@@ -27,6 +27,7 @@ export class TodolistComponent implements OnInit {
 
   addTodo(event: Event) {
     event.preventDefault();
+    this.todos.push(this.todo);
   }
 
   constructor() { }

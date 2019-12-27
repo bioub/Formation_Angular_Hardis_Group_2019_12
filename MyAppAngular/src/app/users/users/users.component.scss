@@ -1,0 +1,15 @@
+.conteneur {
+  display: flex;
+}
+
+.gauche {
+  width: 300px;
+}
+
+.droite {
+  flex: 1;
+}
+
+.current {
+  background-color: yellow;
+}
