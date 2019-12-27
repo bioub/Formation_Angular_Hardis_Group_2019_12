@@ -1,15 +1,24 @@
-<div class="conteneur">
-  <div class="gauche">
-    <div *ngFor="let user of users">
-      <a [routerLink]="user.id" routerLinkActive="current">
+<div class="row">
+  <div class="col-4">
+    <div class="list-group">
+      <a
+        class="list-group-item list-group-item-action"
+        *ngFor="let user of users"
+        [routerLink]="user.id"
+        routerLinkActive="active"
+      >
         {{ user.name }}
       </a>
-    </div>
-    <div>
-      <a routerLink="add" routerLinkActive="current">Ajouter un user</a>
+      <a
+        class="btn btn-block btn-primary mt-3"
+        routerLink="add"
+        routerLinkActive="active"
+      >
+        Ajouter un user
+      </a>
     </div>
   </div>
-  <div class="droite">
+  <div class="col">
     <router-outlet></router-outlet>
   </div>
 </div>

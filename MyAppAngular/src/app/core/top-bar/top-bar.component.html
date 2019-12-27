@@ -1,13 +1,19 @@
-<h2>MyApp</h2>
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">MyApp</a>
 
-<nav>
-  <a
-    routerLink="/"
-    routerLinkActive="current"
-    [routerLinkActiveOptions]="{ exact: true }"
-  >
-    Home
-  </a>
-  <a routerLink="/users" routerLinkActive="current">Users</a>
-  <a routerLink="/contactez-nous" routerLinkActive="current">Contact</a>
+  <ul class="navbar-nav mr-auto">
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" routerLink="/">Home</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="/users">Users</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="/contactez-nous">Contact</a>
+    </li>
+  </ul>
 </nav>
